@@ -129,10 +129,10 @@ def plot_srk(TC,PC,AC, T,P):
         pvap=x[0]
               
     col1,col2,col3=st.columns(3)
-    col1.metric("Fugacity Coefficient Liquid", np.exp(lnphi_l))
-    col2.metric("Fugacity Coefficient Vapour", np.exp(lnphi_v))
+    col1.metric("Fugacity Coefficient Liquid", round(np.exp(lnphi_l),4))
+    col2.metric("Fugacity Coefficient Vapour", round(np.exp(lnphi_v),4))
     if(show_vaporpressure)    :
-        col3.metric("Vapor Pressure", f"{pvap/1e5} bar")
+        col3.metric("Vapor Pressure", f"{round(pvap/1e5,2)} bar")
     
     fig=go.Figure()
     fig.add_scatter(    
